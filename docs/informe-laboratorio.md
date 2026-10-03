@@ -15,6 +15,8 @@
 
 https://github.com/nataliaRT12/DOSW_LAB6_Rodriguez.git
 
+https://github.com/AndreaSolano23/DOSW_Lab6_Solano.git
+
 ## 3. Descripción de la solución
 
 La aplicación ToDo permite gestionar tareas personales (crear, consultar, editar, cambiar de estado y eliminar) desde una interfaz web en React que consume una API REST construida con Spring Boot 4 y Java 21. La información se persiste en PostgreSQL 17, ejecutado en un contenedor Docker.
@@ -220,4 +222,4 @@ React envía una petición HTTP con JSON al Controller, que es el único punto d
 
 ## 8. Video de demostración
 
-https://... (pendiente de agregar el enlace)
+https://pruebacorreoescuelaingeduco-my.sharepoint.com/:v:/g/personal/paula_solano-m_mail_escuelaing_edu_co/IQC1MPfsVlkNTLl-6-vkmKGoAdUei3HlSeFSlWChDZ4nqoM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=1xKuJi
