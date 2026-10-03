@@ -15,6 +15,8 @@
 
 https://github.com/nataliaRT12/DOSW_LAB6_Rodriguez.git
 
+https://github.com/AndreaSolano23/DOSW_Lab6_Solano.git
+
 ## 3. Descripción de la solución
 
 La aplicación ToDo permite gestionar tareas personales (crear, consultar, editar, cambiar de estado y eliminar) desde una interfaz web en React que consume una API REST construida con Spring Boot 4 y Java 21. La información se persiste en PostgreSQL 17, ejecutado en un contenedor Docker.
@@ -47,13 +49,89 @@ PostgreSQL (contenedor Docker)
 
 ## 5. Evidencias principales de funcionamiento
 
-La evidencia incluida en `docs/evidence/` es el reporte de cobertura generado por JaCoCo (`05-jacoco-report.png`), que muestra:
+### Evidencia 01 · PostgreSQL en Docker
+
+Imagen `postgres:17-alpine` descargada y contenedor `todo-postgres` en ejecución.
+
+![PostgreSQL en Docker](https://raw.githubusercontent.com/nataliaRT12/DOSW_LAB6_Rodriguez/main/docs/evidence/01-docker.png)
+
+### Evidencia 02 · Tabla `tasks`
+
+Tabla creada con el script `database/001_create_schema.sql` dentro del contenedor.
+
+![Tabla tasks](https://raw.githubusercontent.com/nataliaRT12/DOSW_LAB6_Rodriguez/main/docs/evidence/02-table-task.png)
+
+### Evidencia 03 · Pruebas del Service
+
+`TaskServiceTest`: 9 pruebas, 0 fallos.
+
+![Pruebas del Service](https://raw.githubusercontent.com/nataliaRT12/DOSW_LAB6_Rodriguez/main/docs/evidence/03-service.png)
+
+### Evidencia 04 · Pruebas del Controller
+
+`TaskControllerTest`: 9 pruebas, 0 fallos.
+
+![Pruebas del Controller](https://raw.githubusercontent.com/nataliaRT12/DOSW_LAB6_Rodriguez/main/docs/evidence/04-controller-tests2.png)
+
+Ejecución completa de las pruebas del backend: 19 pruebas, 0 fallos, `BUILD SUCCESS`.
+
+![Ejecución completa de las pruebas del backend](https://raw.githubusercontent.com/nataliaRT12/DOSW_LAB6_Rodriguez/main/docs/evidence/04-controller-tests.png)
+
+### Evidencia 05 · Reporte de cobertura JaCoCo
+
+![Reporte JaCoCo](evidence/05-jacoco-report.png)
+
+El reporte de JaCoCo (`05-jacoco-report.png`) muestra:
 
 - `edu.eci.dosw.todo.service`: 100% de cobertura de instrucciones y de ramas.
 - `edu.eci.dosw.todo.entity`, `edu.eci.dosw.todo.dto`, `edu.eci.dosw.todo.exception`: 100% de cobertura de instrucciones.
 - Cobertura total del proyecto: 98% de instrucciones, 100% de ramas — ambas por encima de la meta del 80% sugerida por el laboratorio.
 
-El resto del funcionamiento (Docker, API, integración con React) fue verificado en ejecución local durante el desarrollo, según se describe en la sección de Resultados de las pruebas.
+### Evidencia 06 · API funcionando
+
+Peticiones a `/api/v1/tasks`: creación (201), listado y consulta por id (200), actualización (200), eliminación (204) y consulta de un id inexistente (404 con el cuerpo `{"status":404,"message":"Task with id 99 was not found"}`).
+
+![API: crear, listar y consultar](https://raw.githubusercontent.com/nataliaRT12/DOSW_LAB6_Rodriguez/main/docs/evidence/06-api-test.png)
+
+![API: actualizar, eliminar y 404](https://raw.githubusercontent.com/nataliaRT12/DOSW_LAB6_Rodriguez/main/docs/evidence/06.2-api-test.png)
+
+### Evidencia 07 · Aplicación React
+
+Interfaz cargada desde `http://localhost:5173`, sin tareas registradas.
+
+![Aplicación React](https://raw.githubusercontent.com/nataliaRT12/DOSW_LAB6_Rodriguez/main/docs/evidence/07-react-app.png)
+
+### Evidencia 08 · Creación desde React
+
+Formulario con los datos de una tarea nueva y la lista después de guardarla.
+
+![Formulario de creación](https://raw.githubusercontent.com/nataliaRT12/DOSW_LAB6_Rodriguez/main/docs/evidence/08-react-create.png)
+
+![Tarea creada en la lista](https://raw.githubusercontent.com/nataliaRT12/DOSW_LAB6_Rodriguez/main/docs/evidence/08.2-react-create.png)
+
+### Evidencia 09 · Edición desde React
+
+Tarea en estado `Pending`, formulario de edición con el estado cambiado a `In progress` y la tarea ya actualizada.
+
+![Tarea antes de editar](https://raw.githubusercontent.com/nataliaRT12/DOSW_LAB6_Rodriguez/main/docs/evidence/09-react-edit.png)
+
+![Formulario de edición](https://raw.githubusercontent.com/nataliaRT12/DOSW_LAB6_Rodriguez/main/docs/evidence/09.2-react-edit.png)
+
+![Tarea después de editar](https://raw.githubusercontent.com/nataliaRT12/DOSW_LAB6_Rodriguez/main/docs/evidence/09.3-react-edit.png)
+
+### Evidencia 10 · Eliminación desde React
+
+Lista con dos tareas y la lista después de eliminar `revisar correo`.
+
+![Antes de eliminar](https://raw.githubusercontent.com/nataliaRT12/DOSW_LAB6_Rodriguez/main/docs/evidence/10-react-delete.png)
+
+![Después de eliminar](https://raw.githubusercontent.com/nataliaRT12/DOSW_LAB6_Rodriguez/main/docs/evidence/10.2-react-delete.png)
+
+### Evidencia 11 · Pruebas del frontend
+
+Vitest: 3 archivos de prueba y 13 pruebas exitosas.
+
+![Pruebas del frontend](https://raw.githubusercontent.com/nataliaRT12/DOSW_LAB6_Rodriguez/main/docs/evidence/11-frontend-tests.png)
 
 ## 6. Resultados de las pruebas
 
@@ -220,4 +298,4 @@ React envía una petición HTTP con JSON al Controller, que es el único punto d
 
 ## 8. Video de demostración
 
-https://... (pendiente de agregar el enlace)
+https://pruebacorreoescuelaingeduco-my.sharepoint.com/:v:/g/personal/paula_solano-m_mail_escuelaing_edu_co/IQC1MPfsVlkNTLl-6-vkmKGoAdUei3HlSeFSlWChDZ4nqoM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=1xKuJi
