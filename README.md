@@ -4,7 +4,11 @@ Aplicación full stack de gestión de tareas (ToDo) desarrollada para el Laborat
 
 ## Integrantes
 
-- Mariana Tovar ([@Marix201](https://github.com/Marix201))
+| Nombre    | Correo institucional                          | Usuario de GitHub |
+| --------- | --------------------------------------------- | ------------------ |
+| Mariana Tovar | mariana.tovar-c@mail.escuelaing.edu.co | marix201 |
+| Paula Andrea Solano Morales | paula.solano-m@mail.escuelaing.edu.co | AndreaSolano23 |
+| Natalia Andrea Rodríguez Torres   | natalia.rodriguez-t@mail.escuelaing.edu.co | nataliaRT12 |
 
 ## Arquitectura
 DOSW_Lab6_Tovar/
